@@ -43,7 +43,7 @@ export class ChatbotService {
     return this.say(context, response);
   };
 
-  getRouter = () => router([platform('messenger', this.handleMessenger)]);
+  getRouter = () => this.handleMessenger;
 
   private handleMessenger = () =>
     router([
