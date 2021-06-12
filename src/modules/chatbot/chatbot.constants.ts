@@ -50,6 +50,17 @@ const EN_PERSISTENT_MENU = [
     title: chatbotI18nEn[ABOUT_ME_BUTTON],
     payload: ABOUT_ME_PAYLOAD,
   },
+  {
+    "type": "postback",
+    "title": "Outfit suggestions",
+    "payload": "CURATION"
+  },
+  {
+    "type": "web_url",
+    "title": "Shop now",
+    "url": "https://www.originalcoastclothing.com/",
+    "webview_height_ratio": "full"
+  }
 ];
 
 const SR_PERSISTENT_MENU = [
@@ -58,6 +69,17 @@ const SR_PERSISTENT_MENU = [
     title: chatbotI18nSr[ABOUT_ME_BUTTON],
     payload: ABOUT_ME_PAYLOAD,
   },
+  {
+    "type": "postback",
+    "title": "Outfit suggestions",
+    "payload": "CURATION"
+  },
+  {
+    "type": "web_url",
+    "title": "Shop now",
+    "url": "https://www.originalcoastclothing.com/",
+    "webview_height_ratio": "full"
+  }
 ];
 
 export const PERSISTENT_MENU: MessengerTypes.PersistentMenu = [
