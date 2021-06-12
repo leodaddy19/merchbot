@@ -58,7 +58,7 @@ const EN_PERSISTENT_MENU = [
   {
     "type": "web_url",
     "title": "Shop now",
-    "url": "https://www.originalcoastclothing.com/",
+    "url": "https://www.minsiories.com/",
     "webview_height_ratio": "full"
   }
 ];
@@ -77,7 +77,7 @@ const SR_PERSISTENT_MENU = [
   {
     "type": "web_url",
     "title": "Shop now",
-    "url": "https://www.originalcoastclothing.com/",
+    "url": "https://www.minsiories.com/",
     "webview_height_ratio": "full"
   }
 ];
