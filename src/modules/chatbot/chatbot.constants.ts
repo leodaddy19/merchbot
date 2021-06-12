@@ -49,12 +49,12 @@ const EN_PERSISTENT_MENU = [
   {
     type: 'postback',
     title: 'Show Collections',
-    url: GET_COLLECTIONS_PAYLOAD,
+    payload: GET_COLLECTIONS_PAYLOAD,
   },
   {
     type: 'web_url',
     title: 'Visit Our Site',
-    payload: 'https://www.minsiories.com',
+    url: 'https://www.minsiories.com',
   },
   {
     type: 'postback',
@@ -67,12 +67,12 @@ const SR_PERSISTENT_MENU = [
   {
     type: 'postback',
     title: 'Show Collections',
-    url: GET_COLLECTIONS_PAYLOAD,
+    payload: GET_COLLECTIONS_PAYLOAD,
   },
   {
     type: 'web_url',
     title: 'Visit Our Site',
-    payload: 'https://www.minsiories.com',
+    url: 'https://www.minsiories.com',
   },
   {
     type: 'postback',
