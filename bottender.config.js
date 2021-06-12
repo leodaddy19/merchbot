@@ -1,7 +1,7 @@
 const {
   GET_STARTED_PAYLOAD,
   GREETING_TEXT,
-  PERSISTENT_MENU
+  PERSISTENT_MENU,
 } = require('./dist/src/modules/chatbot/chatbot.constants');
 
 module.exports = {
@@ -31,6 +31,28 @@ module.exports = {
         },
         greeting: GREETING_TEXT,
         persistentMenu: PERSISTENT_MENU,
+        iceBreakers: [
+          {
+            question: 'Where are you located?',
+            payload: 'LOCATION_POSTBACK_PAYLOAD',
+          },
+          {
+            question: 'What are your hours?',
+            payload: 'HOURS_POSTBACK_PAYLOAD',
+          },
+          {
+            question: 'What are your hours?',
+            payload: 'HOURS_POSTBACK_PAYLOAD',
+          },
+          {
+            question: 'Can you tell me more about your business?',
+            payload: 'MORE_POSTBACK_PAYLOAD',
+          },
+          {
+            question: 'What services do you offer?',
+            payload: 'SERVICES_POSTBACK_PAYLOAD',
+          },
+        ],
       },
     },
   },
