@@ -5,6 +5,7 @@ import { chatbot as chatbotI18nSr } from 'locales/sr.json';
 
 export const ABOUT_ME_PAYLOAD = 'ABOUT_ME_PAYLOAD';
 export const GET_STARTED_PAYLOAD = 'GET_STARTED_PAYLOAD';
+export const GET_COLLECTIONS_PAYLOAD = 'GET_COLLECTIONS_PAYLOAD';
 
 const ABOUT_ME_BUTTON = 'ABOUT_ME_BUTTON';
 const ABOUT_ME_MESSAGE = 'ABOUT_ME_MESSAGE';
@@ -23,7 +24,7 @@ export const DEFAULT = 'default';
 export const EN_GB_LOCALE = 'en_GB';
 export const EN_US_LOCALE = 'en_US';
 export const SR_RS_LOCALE = 'sr_RS';
-const EN_GREETING_TEXT = `Hi! This is ${projectName}`;
+const EN_GREETING_TEXT = `Wellcome to ${projectName} store!`;
 const SR_GREETING_TEXT = `Zdravo! Ovo je ${projectName}`;
 export const GREETING_TEXT: MessengerTypes.GreetingConfig[] = [
   {
@@ -47,38 +48,36 @@ export const GREETING_TEXT: MessengerTypes.GreetingConfig[] = [
 const EN_PERSISTENT_MENU = [
   {
     type: 'postback',
-    title: chatbotI18nEn[ABOUT_ME_BUTTON],
+    title: 'Show Collections',
+    url: GET_COLLECTIONS_PAYLOAD,
+  },
+  {
+    type: 'web_url',
+    title: 'Visit Our Site',
+    payload: 'https://www.minsiories.com',
+  },
+  {
+    type: 'postback',
+    title: EN_GREETING_TEXT,
     payload: ABOUT_ME_PAYLOAD,
-  },
-  {
-    "type": "postback",
-    "title": "Outfit suggestions",
-    "payload": "CURATION"
-  },
-  {
-    "type": "web_url",
-    "title": "Shop now",
-    "url": "https://www.minsiories.com/",
-    "webview_height_ratio": "full"
   }
 ];
 
 const SR_PERSISTENT_MENU = [
   {
     type: 'postback',
-    title: chatbotI18nSr[ABOUT_ME_BUTTON],
+    title: 'Show Collections',
+    url: GET_COLLECTIONS_PAYLOAD,
+  },
+  {
+    type: 'web_url',
+    title: 'Visit Our Site',
+    payload: 'https://www.minsiories.com',
+  },
+  {
+    type: 'postback',
+    title: EN_GREETING_TEXT,
     payload: ABOUT_ME_PAYLOAD,
-  },
-  {
-    "type": "postback",
-    "title": "Outfit suggestions",
-    "payload": "CURATION"
-  },
-  {
-    "type": "web_url",
-    "title": "Shop now",
-    "url": "https://www.minsiories.com/",
-    "webview_height_ratio": "full"
   }
 ];
 

@@ -4,7 +4,7 @@ import {
   DEFAULT_MESSENGER_GENDER,
   DEFAULT_MESSENGER_LOCALE,
 } from 'common/config/constants';
-import { ABOUT_ME_PAYLOAD, GET_STARTED_PAYLOAD } from './chatbot.constants';
+import { ABOUT_ME_PAYLOAD, GET_COLLECTIONS_PAYLOAD, GET_STARTED_PAYLOAD } from './chatbot.constants';
 import { PayloadHandlers } from './chatbot.types';
 import { getUserOptions } from './chatbot.utils';
 import { LocationService } from './services/location.service';
@@ -55,6 +55,11 @@ export class ChatbotController {
     );
   };
 
+
+  private getCollections = async (context: MessengerContext) => {
+    
+  };
+
   locationHandler = async (
     context: MessengerContext,
   ): Promise<MessengerTypes.TextMessage> =>
@@ -88,6 +93,7 @@ export class ChatbotController {
   postbackHandlers: PayloadHandlers = {
     [ABOUT_ME_PAYLOAD]: this.aboutMeHandler,
     [GET_STARTED_PAYLOAD]: this.getStartedButtonHandler,
+    [GET_COLLECTIONS_PAYLOAD]: this.getStartedButtonHandler,
   };
 
   quickReplyHandlers: PayloadHandlers = {
