@@ -22,19 +22,19 @@ import { ChatbotModule } from 'modules/chatbot/chatbot.module';
 import { I18nModule } from 'modules/external/i18n';
 import { WebhooksModule } from 'modules/webhooks/webhooks.module';
 import { AppController } from './app.controller';
+import databaseConfig from 'common/config/database.config';
+import { MongooseConfigService } from 'common/config/mongoose.config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      envFilePath: [`.env.${process.env.NODE_ENV}`, '.env'],
+      isGlobal: true,
+      load: [databaseConfig],
+      expandVariables: true,
+    }),
     MongooseModule.forRootAsync({
-      imports: [
-        ConfigModule.forRoot({
-          load: [config],
-        }),
-      ],
-      inject: [ConfigService],
-      useFactory: async (configService: ConfigService) => ({
-        uri: configService.get('DATABASE_URI'),
-      }),
+      useClass: MongooseConfigService,
     }),
     I18nModule.registerAsync({
       useFactory: () => {
