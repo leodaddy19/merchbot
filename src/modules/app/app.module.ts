@@ -33,7 +33,7 @@ import { AppController } from './app.controller';
       ],
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => ({
-        uri: configService.get('DATABASE_URL'),
+        uri: configService.get('DATABASE_URI'),
       }),
     }),
     I18nModule.registerAsync({

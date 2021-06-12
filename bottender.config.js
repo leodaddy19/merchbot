@@ -9,7 +9,7 @@ module.exports = {
     driver: 'mongo',
     stores: {
       mongo: {
-        url: process.env.DATABASE_URL,
+        url: process.env.DATABASE_URI,
         collectionName: 'sessions',
       },
     },
