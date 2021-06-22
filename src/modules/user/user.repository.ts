@@ -41,4 +41,13 @@ export class UserRepository {
 
     return user;
   };
+
+  findAndCreate = async (profile: any) => {
+    const user = await this.userModel.findOne({messenger_id: profile.profile});
+    if (!user) {
+      const newUser = new this.userModel(profile);
+      return newUser.save();
+    }
+    return user;
+  }
 }

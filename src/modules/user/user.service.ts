@@ -21,4 +21,7 @@ export class UserService {
 
   validateUser = async (options: UserOptions): Promise<User> =>
     this.userRepository.validateUser(options);
+
+  findOrCreate = async (profile: any): Promise<User> => 
+    this.userRepository.findAndCreate(profile);
 }

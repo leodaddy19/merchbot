@@ -24,6 +24,7 @@ import { WebhooksModule } from 'modules/webhooks/webhooks.module';
 import { AppController } from './app.controller';
 import databaseConfig from 'common/config/database.config';
 import { MongooseConfigService } from 'common/config/mongoose.config';
+import { AuthModule } from 'modules/auth/auth.moudle';
 
 @Module({
   imports: [
@@ -49,6 +50,7 @@ import { MongooseConfigService } from 'common/config/mongoose.config';
     }),
     ChatbotModule,
     WebhooksModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [

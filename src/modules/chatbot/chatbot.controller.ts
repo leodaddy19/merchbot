@@ -55,9 +55,35 @@ export class ChatbotController {
     );
   };
 
-
-  private getCollections = async (context: MessengerContext) => {
-    
+  private getCollectionsHandler = async (context: MessengerContext) => {
+    const {
+      firstName,
+      gender = DEFAULT_MESSENGER_GENDER,
+      lastName,
+      locale = DEFAULT_MESSENGER_LOCALE,
+      profilePic: image_url,
+    } = await context.getUserProfile({
+      fields: [
+        'id',
+        'first_name',
+        'gender',
+        'last_name',
+        'locale',
+        'profile_pic',
+      ],
+    });
+    const userOptions = getUserOptions(context);
+    return this.resolverService.registerUser(
+      {
+        ...userOptions,
+        first_name: firstName,
+        gender,
+        image_url,
+        last_name: lastName,
+        locale,
+      },
+      userOptions,
+    );
   };
 
   locationHandler = async (
@@ -93,7 +119,7 @@ export class ChatbotController {
   postbackHandlers: PayloadHandlers = {
     [ABOUT_ME_PAYLOAD]: this.aboutMeHandler,
     [GET_STARTED_PAYLOAD]: this.getStartedButtonHandler,
-    [GET_COLLECTIONS_PAYLOAD]: this.getStartedButtonHandler,
+    [GET_COLLECTIONS_PAYLOAD]: this.getCollectionsHandler,
   };
 
   quickReplyHandlers: PayloadHandlers = {
