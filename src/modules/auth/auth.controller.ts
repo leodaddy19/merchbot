@@ -5,8 +5,15 @@ import { FBAuthReponseDto } from "./dtos/fb_auth_reponse.dto";
 export class AuthController {
   @UseGuards(AuthGuard('facebook-token'))  
   @Post('facebook')
-  async getTokenAfterFacebookSignIn(
+  async postTokenAfterFacebookSignIn(
     @Body() body: FBAuthReponseDto,
+    @Req() req) {
+    console.log(req.user);
+  }
+
+  @UseGuards(AuthGuard('facebook-token'))  
+  @Get('facebook')
+  async getTokenAfterFacebookSignIn(
     @Req() req) {
     console.log(req.user);
   }
