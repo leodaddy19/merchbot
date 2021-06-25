@@ -40,7 +40,7 @@ async function bootstrap(): Promise<void> {
 
   app.useStaticAssets(path.join(process.cwd(), 'public'));
   app.setViewEngine('ejs');
-
+  app.enableCors();
   setupApiDocs(app);
 
   await app.listen(configService.get('PORT')).then((): void => {
