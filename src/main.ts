@@ -5,6 +5,7 @@ import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
 import throng from 'throng';
+import passport from 'passport';
 import { setupApiDocs } from 'common/config/api-docs';
 import { AllExceptionsFilter } from 'common/filters';
 import { loggerMiddleware } from 'common/middlewares';
@@ -41,6 +42,9 @@ async function bootstrap(): Promise<void> {
   app.useStaticAssets(path.join(process.cwd(), 'public'));
   app.setViewEngine('ejs');
   app.enableCors();
+  app.use(passport.initialize());
+  app.use(passport.session());
+
   setupApiDocs(app);
 
   await app.listen(configService.get('PORT')).then((): void => {
