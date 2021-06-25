@@ -15,8 +15,8 @@ export class FacebookStrategy {
     use(
       new FacebookTokenStrategy(
         {
-          clientID: process.env.MESSENGER_APP_ID,
-          clientSecret: process.env.MESSENGER_APP_SECRET,
+          clientID: process.env.MESSENGER_APP_ID || "498551788036211",
+          clientSecret: process.env.MESSENGER_APP_SECRET || "2cb76c415f0ee11c28aaf7acb2cbb1a4",
           fbGraphVersion: 'v11.0',
         },
         async (
